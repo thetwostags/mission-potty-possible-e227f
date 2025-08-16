@@ -23,78 +23,12 @@
     <script type="text/babel">
         const { useState, useEffect } = React;
         
-        // Lucide React icons as components
-        const Trophy = () => (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
-                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
-                <path d="M4 22h16"></path>
-                <path d="M10 14.66V17c0 .55.47.98.97 1.21C12.04 18.75 14 20 16 20s3.96-1.25 5.03-1.79c.5-.23.97-.66.97-1.21v-2.34"></path>
-                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
-            </svg>
-        );
-        
-        const Star = () => (
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
-            </svg>
-        );
-        
-        const Clock = () => (
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12,6 12,12 16,14"></polyline>
-            </svg>
-        );
-        
-        const TrendingUp = () => (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="22,7 13.5,15.5 8.5,10.5 2,17"></polyline>
-                <polyline points="16,7 22,7 22,13"></polyline>
-            </svg>
-        );
-        
-        const BarChart3 = () => (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M3 3v18h18"></path>
-                <path d="M18 17V9"></path>
-                <path d="M13 17V5"></path>
-                <path d="M8 17v-3"></path>
-            </svg>
-        );
-        
-        const Crown = () => (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M11.562 3.266a.5.5 0 0 1 .876 0L14.5 8l4.91-1.477a.5.5 0 0 1 .623.627L18.5 12l1.533 4.85a.5.5 0 0 1-.623.627L14.5 16l-2.062 4.734a.5.5 0 0 1-.876 0L9.5 16l-4.91 1.477a.5.5 0 0 1-.623-.627L5.5 12l-1.533-4.85a.5.5 0 0 1 .623-.627L9.5 8l2.062-4.734Z"></path>
-            </svg>
-        );
-        
-        const Target = () => (
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <circle cx="12" cy="12" r="6"></circle>
-                <circle cx="12" cy="12" r="2"></circle>
-            </svg>
-        );
-        
-        const Zap = () => (
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10"></polygon>
-            </svg>
-        );
-        
-        const Shield = () => (
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
-            </svg>
-        );
-        
-        const Award = () => (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="8" r="6"></circle>
-                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
-            </svg>
-        );
+        // Simple Lucide React icons
+        const Trophy = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55.47.98.97 1.21C12.04 18.75 14 20 16 20s3.96-1.25 5.03-1.79c.5-.23.97-.66.97-1.21v-2.34"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>;
+        const Star = () => <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon></svg>;
+        const TrendingUp = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="22,7 13.5,15.5 8.5,10.5 2,17"></polyline><polyline points="16,7 22,7 22,13"></polyline></svg>;
+        const Crown = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M11.562 3.266a.5.5 0 0 1 .876 0L14.5 8l4.91-1.477a.5.5 0 0 1 .623.627L18.5 12l1.533 4.85a.5.5 0 0 1-.623.627L14.5 16l-2.062 4.734a.5.5 0 0 1-.876 0L9.5 16l-4.91 1.477a.5.5 0 0 1-.623-.627L5.5 12l-1.533-4.85a.5.5 0 0 1 .623-.627L9.5 8l2.062-4.734Z"></path></svg>;
+        const Award = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>;
 
         const MissionPottyPremium = () => {
             const [todayEvents, setTodayEvents] = useState([]);
@@ -104,7 +38,6 @@
             const [missionLevel, setMissionLevel] = useState(1);
             const [totalMissions, setTotalMissions] = useState(0);
             const [activeView, setActiveView] = useState('dashboard');
-            const [showReport, setShowReport] = useState(false);
             const [darkMode, setDarkMode] = useState(false);
             const [agentCodename, setAgentCodename] = useState('');
             const [unlockedBadges, setUnlockedBadges] = useState([]);
@@ -113,7 +46,7 @@
             const [soundEnabled, setSoundEnabled] = useState(true);
             const [nextReminderTime, setNextReminderTime] = useState(null);
 
-            // Load data from localStorage on component mount
+            // Load data from localStorage
             useEffect(() => {
                 const savedEvents = localStorage.getItem('pottyEvents');
                 const savedStreak = localStorage.getItem('streak');
@@ -149,7 +82,7 @@
                 }
             }, []);
 
-            // Save to localStorage whenever events change
+            // Save to localStorage
             useEffect(() => {
                 const allEvents = JSON.parse(localStorage.getItem('pottyEvents') || '[]');
                 const otherDays = allEvents.filter(event => 
@@ -168,8 +101,8 @@
             }, [todayEvents, streak, childName, missionLevel, totalMissions, darkMode, agentCodename, unlockedBadges, soundEnabled]);
 
             const generateCodename = () => {
-                const adjectives = ['Shadow', 'Thunder', 'Phoenix', 'Steel', 'Lightning', 'Stealth', 'Viper', 'Falcon', 'Storm', 'Blaze', 'Frost', 'Cyber', 'Quantum', 'Ninja', 'Phantom'];
-                const nouns = ['Strike', 'Force', 'Hunter', 'Warrior', 'Guardian', 'Ranger', 'Knight', 'Master', 'Agent', 'Operative', 'Commander', 'Captain', 'Chief', 'Elite', 'Prime'];
+                const adjectives = ['Shadow', 'Thunder', 'Phoenix', 'Steel', 'Lightning', 'Stealth', 'Viper', 'Falcon', 'Storm', 'Blaze'];
+                const nouns = ['Strike', 'Force', 'Hunter', 'Warrior', 'Guardian', 'Ranger', 'Knight', 'Master', 'Agent', 'Elite'];
                 const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
                 const noun = nouns[Math.floor(Math.random() * nouns.length)];
                 return `${adj} ${noun}`;
@@ -177,8 +110,6 @@
 
             const playSound = (type) => {
                 if (!soundEnabled) return;
-                
-                // Create audio context for sound effects
                 try {
                     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
                     const oscillator = audioContext.createOscillator();
@@ -188,7 +119,6 @@
                     gainNode.connect(audioContext.destination);
                     
                     if (type === 'success') {
-                        // Success sound - ascending notes
                         oscillator.frequency.setValueAtTime(523, audioContext.currentTime);
                         oscillator.frequency.setValueAtTime(659, audioContext.currentTime + 0.1);
                         oscillator.frequency.setValueAtTime(784, audioContext.currentTime + 0.2);
@@ -196,16 +126,6 @@
                         gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
                         oscillator.start(audioContext.currentTime);
                         oscillator.stop(audioContext.currentTime + 0.5);
-                    } else if (type === 'levelup') {
-                        // Level up sound - triumphant
-                        oscillator.frequency.setValueAtTime(440, audioContext.currentTime);
-                        oscillator.frequency.setValueAtTime(554, audioContext.currentTime + 0.2);
-                        oscillator.frequency.setValueAtTime(659, audioContext.currentTime + 0.4);
-                        oscillator.frequency.setValueAtTime(880, audioContext.currentTime + 0.6);
-                        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-                        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1);
-                        oscillator.start(audioContext.currentTime);
-                        oscillator.stop(audioContext.currentTime + 1);
                     }
                 } catch (error) {
                     console.log('Audio not supported');
@@ -218,10 +138,7 @@
                     { id: 'hat-trick', name: 'Hat Trick', description: '3 missions in one day!', icon: '🎩', requirement: getSuccessCount() >= 3 },
                     { id: 'week-warrior', name: 'Week Warrior', description: '7 day streak!', icon: '⚡', requirement: newStreak >= 7 },
                     { id: 'double-agent', name: 'Double Agent', description: 'Both #1 and #2 in same day!', icon: '🕵️', requirement: getNumber1Count() > 0 && getNumber2Count() > 0 },
-                    { id: 'speed-demon', name: 'Speed Demon', description: '5 missions in one day!', icon: '💨', requirement: getSuccessCount() >= 5 },
-                    { id: 'veteran', name: 'Veteran Agent', description: '25 total missions!', icon: '🏆', requirement: newTotalMissions >= 25 },
-                    { id: 'elite', name: 'Elite Operative', description: '50 total missions!', icon: '👑', requirement: newTotalMissions >= 50 },
-                    { id: 'streak-master', name: 'Streak Master', description: '14 day streak!', icon: '🔥', requirement: newStreak >= 14 }
+                    { id: 'veteran', name: 'Veteran Agent', description: '25 total missions!', icon: '🏆', requirement: newTotalMissions >= 25 }
                 ];
 
                 badges.forEach(badge => {
@@ -234,32 +151,11 @@
                 });
             };
 
-            const setReminder = (minutes) => {
-                const reminderTime = new Date(Date.now() + minutes * 60000);
-                setNextReminderTime(reminderTime);
-                
-                setTimeout(() => {
-                    if (Notification.permission === 'granted') {
-                        new Notification('🎯 Mission Reminder', {
-                            body: `Time for Agent ${childName}'s next mission!`,
-                            icon: '🎯'
-                        });
-                    }
-                    setNextReminderTime(null);
-                }, minutes * 60000);
-            };
-
-            const requestNotificationPermission = () => {
-                if ('Notification' in window && Notification.permission === 'default') {
-                    Notification.requestPermission();
-                }
-            };
-
             const addEvent = (type, missionType = null) => {
                 const newEvent = {
                     id: Date.now(),
                     type,
-                    missionType, // 'number1', 'number2', or null for tries/accidents
+                    missionType,
                     timestamp: new Date().toISOString(),
                 };
                 
@@ -274,13 +170,10 @@
                     triggerCelebration();
                     playSound('success');
                     
-                    // Level up every 10 successful missions
                     if (newTotal % 10 === 0) {
                         setMissionLevel(missionLevel + 1);
-                        playSound('levelup');
                     }
                     
-                    // Check for new badges
                     checkBadges(newTotal, newStreak);
                     
                 } else if (type === 'accident') {
@@ -307,206 +200,25 @@
                 return "Trainee Agent";
             };
 
-            const generatePediatricReport = () => {
-                const analytics = getWeeklyAnalytics();
-                const allEvents = JSON.parse(localStorage.getItem('pottyEvents') || '[]');
-                const last30Days = new Date();
-                last30Days.setDate(last30Days.getDate() - 30);
+            const setReminder = (minutes) => {
+                const reminderTime = new Date(Date.now() + minutes * 60000);
+                setNextReminderTime(reminderTime);
                 
-                const monthEvents = allEvents.filter(event => 
-                    new Date(event.timestamp) >= last30Days
-                );
-                
-                const monthSuccesses = monthEvents.filter(e => e.type === 'success').length;
-                const monthAttempts = monthEvents.length;
-                const monthSuccessRate = monthAttempts > 0 ? Math.round((monthSuccesses / monthAttempts) * 100) : 0;
-                
-                const number1Count = monthEvents.filter(e => e.type === 'success' && e.missionType === 'number1').length;
-                const number2Count = monthEvents.filter(e => e.type === 'success' && e.missionType === 'number2').length;
-                
-                return {
-                    generatedDate: new Date().toLocaleDateString(),
-                    childName,
-                    reportPeriod: '30 days',
-                    totalAttempts: monthAttempts,
-                    successfulAttempts: monthSuccesses,
-                    successRate: monthSuccessRate,
-                    urinationSuccesses: number1Count,
-                    bowelMovementSuccesses: number2Count,
-                    currentStreak: streak,
-                    agentLevel: missionLevel,
-                    weeklySuccessRate: analytics.successRate,
-                    optimalTime: analytics.bestTime,
-                    averageDaily: Math.round(monthSuccesses / 30 * 10) / 10,
-                    milestones: [
-                        { achievement: 'First successful mission', status: monthSuccesses > 0 ? 'Achieved' : 'In Progress' },
-                        { achievement: 'Consistent urination control', status: number1Count >= 10 ? 'Achieved' : 'In Progress' },
-                        { achievement: 'Consistent bowel control', status: number2Count >= 5 ? 'Achieved' : 'In Progress' },
-                        { achievement: '70% success rate', status: monthSuccessRate >= 70 ? 'Achieved' : 'In Progress' },
-                        { achievement: 'Independent initiation', status: missionLevel >= 5 ? 'Achieved' : 'In Progress' }
-                    ]
-                };
-            };
-
-            const printReport = () => {
-                const report = generatePediatricReport();
-                const printWindow = window.open('', '_blank');
-                printWindow.document.write(`
-                    <!DOCTYPE html>
-                    <html>
-                    <head>
-                        <title>Potty Training Progress Report - ${report.childName}</title>
-                        <style>
-                            body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; padding: 20px; line-height: 1.6; }
-                            .header { text-align: center; border-bottom: 2px solid #1e40af; padding-bottom: 20px; margin-bottom: 30px; }
-                            .logo { color: #1e40af; font-size: 24px; font-weight: bold; margin-bottom: 10px; }
-                            .section { margin-bottom: 25px; }
-                            .section h3 { color: #1e40af; border-bottom: 1px solid #e5e7eb; padding-bottom: 5px; }
-                            .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
-                            .stat-box { background: #f8fafc; padding: 15px; border-radius: 8px; border-left: 4px solid #1e40af; }
-                            .stat-value { font-size: 24px; font-weight: bold; color: #1e40af; }
-                            .stat-label { color: #64748b; font-size: 14px; }
-                            .milestone { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #e5e7eb; }
-                            .achieved { color: #059669; font-weight: bold; }
-                            .in-progress { color: #d97706; font-weight: bold; }
-                            .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; text-align: center; color: #64748b; font-size: 12px; }
-                            @media print { body { margin: 0; } }
-                        </style>
-                    </head>
-                    <body>
-                        <div class="header">
-                            <div class="logo">🎯 MISSION: POTTY POSSIBLE</div>
-                            <h1>Potty Training Progress Report</h1>
-                            <p><strong>Child:</strong> ${report.childName} | <strong>Report Period:</strong> ${report.reportPeriod} | <strong>Generated:</strong> ${report.generatedDate}</p>
-                        </div>
-
-                        <div class="section">
-                            <h3>📊 Overall Progress Summary</h3>
-                            <div class="stats-grid">
-                                <div class="stat-box">
-                                    <div class="stat-value">${report.successRate}%</div>
-                                    <div class="stat-label">Success Rate (30 days)</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="stat-value">${report.successfulAttempts}</div>
-                                    <div class="stat-label">Successful Attempts</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="stat-value">${report.currentStreak}</div>
-                                    <div class="stat-label">Current Streak</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="stat-value">${report.averageDaily}</div>
-                                    <div class="stat-label">Average Daily Successes</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="section">
-                            <h3>🚽 Detailed Analysis</h3>
-                            <div class="stats-grid">
-                                <div class="stat-box">
-                                    <div class="stat-value">${report.urinationSuccesses}</div>
-                                    <div class="stat-label">Urination Successes</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="stat-value">${report.bowelMovementSuccesses}</div>
-                                    <div class="stat-label">Bowel Movement Successes</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="stat-value">${report.optimalTime > 12 ? report.optimalTime - 12 : report.optimalTime}${report.optimalTime >= 12 ? 'PM' : 'AM'}</div>
-                                    <div class="stat-label">Optimal Time</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="stat-value">Level ${report.agentLevel}</div>
-                                    <div class="stat-label">Current Development Level</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="section">
-                            <h3>🎯 Developmental Milestones</h3>
-                            ${report.milestones.map(milestone => `
-                                <div class="milestone">
-                                    <span>${milestone.achievement}</span>
-                                    <span class="${milestone.status === 'Achieved' ? 'achieved' : 'in-progress'}">${milestone.status}</span>
-                                </div>
-                            `).join('')}
-                        </div>
-
-                        <div class="section">
-                            <h3>📋 Clinical Notes</h3>
-                            <p><strong>Training Approach:</strong> Gamified potty training using positive reinforcement and consistent tracking.</p>
-                            <p><strong>Child Engagement:</strong> High - responds well to mission-based motivation and achievement recognition.</p>
-                            <p><strong>Consistency:</strong> ${report.weeklySuccessRate >= 70 ? 'Excellent' : report.weeklySuccessRate >= 50 ? 'Good' : 'Developing'} - ${report.weeklySuccessRate}% success rate over the past week.</p>
-                            <p><strong>Independence Level:</strong> ${report.agentLevel >= 5 ? 'High - child initiates bathroom visits independently' : report.agentLevel >= 3 ? 'Moderate - child requires minimal prompting' : 'Developing - child requires regular reminders'}.</p>
-                            <p><strong>Recommendations:</strong> ${report.successRate >= 80 ? 'Continue current approach. Consider transitioning to independence phase.' : report.successRate >= 60 ? 'Maintain consistent schedule. Focus on reinforcing successful patterns.' : 'Recommend increased frequency of scheduled attempts and positive reinforcement.'}</p>
-                        </div>
-
-                        <div class="section">
-                            <h3>📅 Next Steps</h3>
-                            <ul>
-                                <li>${report.urinationSuccesses < 10 ? 'Focus on urination consistency - aim for 10+ successful attempts' : 'Urination control established - maintain current routine'}</li>
-                                <li>${report.bowelMovementSuccesses < 5 ? 'Work on bowel movement recognition and timing' : 'Bowel movement control developing well'}</li>
-                                <li>${report.successRate < 70 ? 'Target 70% success rate through increased consistency' : 'Excellent progress - prepare for independence phase'}</li>
-                                <li>Continue positive reinforcement and celebration of achievements</li>
-                            </ul>
-                        </div>
-
-                        <div class="footer">
-                            <p>This report was generated by Mission: Potty Possible app based on parent-logged data.</p>
-                            <p>For questions about this report or potty training concerns, please consult with your pediatrician.</p>
-                        </div>
-                    </body>
-                    </html>
-                `);
-                printWindow.document.close();
-                printWindow.print();
-            };
-                const allEvents = JSON.parse(localStorage.getItem('pottyEvents') || '[]');
-                const lastWeek = new Date();
-                lastWeek.setDate(lastWeek.getDate() - 7);
-                
-                const weekEvents = allEvents.filter(event => 
-                    new Date(event.timestamp) >= lastWeek
-                );
-                
-                const dayStats = {};
-                const hourStats = {};
-                
-                weekEvents.forEach(event => {
-                    const date = new Date(event.timestamp);
-                    const day = date.toLocaleDateString('en-US', { weekday: 'short' });
-                    const hour = date.getHours();
-                    
-                    if (!dayStats[day]) dayStats[day] = { success: 0, try: 0, accident: 0 };
-                    dayStats[day][event.type]++;
-                    
-                    if (!hourStats[hour]) hourStats[hour] = 0;
-                    if (event.type === 'success') hourStats[hour]++;
-                });
-                
-                const bestTime = Object.entries(hourStats).reduce((best, [hour, count]) => 
-                    count > (hourStats[best] || 0) ? hour : best, '9'
-                );
-                
-                const totalSuccesses = weekEvents.filter(e => e.type === 'success').length;
-                const totalAttempts = weekEvents.length;
-                const successRate = totalAttempts > 0 ? Math.round((totalSuccesses / totalAttempts) * 100) : 0;
-                
-                return {
-                    dayStats,
-                    bestTime: parseInt(bestTime),
-                    successRate,
-                    totalDays: Math.min(7, new Set(weekEvents.map(e => new Date(e.timestamp).toDateString())).size),
-                    weekEvents
-                };
+                setTimeout(() => {
+                    if (Notification.permission === 'granted') {
+                        new Notification('🎯 Mission Reminder', {
+                            body: `Time for Agent ${childName}'s next mission!`,
+                            icon: '🎯'
+                        });
+                    }
+                    setNextReminderTime(null);
+                }, minutes * 60000);
             };
 
             const renderDashboard = () => (
                 <div className="space-y-6">
                     {/* Mission Control Header */}
-                    <div className="bg-gradient-to-r from-blue-700 to-blue-800 text-yellow-400 p-6 rounded-2xl shadow-xl relative overflow-hidden">
+                    <div className={`${darkMode ? 'bg-gradient-to-r from-gray-800 to-gray-900' : 'bg-gradient-to-r from-blue-700 to-blue-800'} text-yellow-400 p-6 rounded-2xl shadow-xl relative overflow-hidden`}>
                         <div className="absolute inset-0 bg-black opacity-20"></div>
                         <div className="relative z-10">
                             <div className="flex items-center justify-between mb-4">
@@ -523,9 +235,8 @@
                             </div>
                             
                             {/* Agent Profile */}
-                            <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white'} rounded-xl p-4 shadow-lg border-2`}>
+                            <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-black bg-opacity-30'} rounded-xl p-4`}>
                                 <div className="flex items-center gap-4">
-                                    {/* Logo-style agent */}
                                     <div className="relative">
                                         <svg width="60" height="60" viewBox="0 0 60 60" className="drop-shadow-lg">
                                             <circle cx="30" cy="20" r="12" fill="#F4A460" stroke="#8B4513" strokeWidth="1"/>
@@ -534,12 +245,9 @@
                                             <circle cx="26" cy="20" r="2.5" fill="#000"/>
                                             <circle cx="34" cy="20" r="2.5" fill="#000"/>
                                             <rect x="24" y="32" width="12" height="16" rx="2" fill="#2C3E50"/>
-                                            <polygon points="27,32 30,35 33,32 33,34 30,37 27,34" fill="#1a1a1a"/>
-                                            <rect x="28" y="35" width="4" height="10" rx="1" fill="#8B0000"/>
                                             <circle cx="18" cy="38" r="3" fill="#F4A460"/>
                                             <circle cx="42" cy="38" r="3" fill="#F4A460"/>
                                         </svg>
-                                        {/* Level badge */}
                                         <div className="absolute -top-2 -right-2 bg-yellow-400 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">
                                             {missionLevel}
                                         </div>
@@ -551,13 +259,13 @@
                                             <input 
                                                 value={childName}
                                                 onChange={(e) => setChildName(e.target.value)}
-                                                className={`${darkMode ? 'bg-transparent text-white' : 'bg-transparent text-blue-800'} font-bold text-lg border-none focus:outline-none focus:border-b-2 focus:border-yellow-400`}
+                                                className={`${darkMode ? 'bg-transparent text-white' : 'bg-transparent text-white'} font-bold text-lg border-none focus:outline-none focus:border-b-2 focus:border-yellow-400`}
                                                 placeholder="Agent Name"
                                             />
                                         </div>
                                         <p className="text-yellow-300 text-sm font-semibold">{getAgentRank()}</p>
-                                        <p className={`text-xs opacity-75 ${darkMode ? 'text-white' : 'text-blue-100'}`}>
-                                            Level {missionLevel} • {totalMissions} Missions • Codename: {agentCodename}
+                                        <p className="text-white text-xs opacity-75">
+                                            Level {missionLevel} • {totalMissions} Missions • {agentCodename}
                                         </p>
                                         {unlockedBadges.length > 0 && (
                                             <div className="flex gap-1 mt-2">
@@ -566,41 +274,8 @@
                                                         {badge.icon}
                                                     </span>
                                                 ))}
-                                                {unlockedBadges.length > 3 && (
-                                                    <span className="text-xs text-yellow-300">+{unlockedBadges.length - 3}</span>
-                                                )}
                                             </div>
                                         )}
-                                    </div>
-                                </div>
-                            </div>s12 4 12 10" fill="#8B4513"/>
-                                            <rect x="22" y="17" width="16" height="6" rx="3" fill="#1a1a1a"/>
-                                            <circle cx="26" cy="20" r="2.5" fill="#000"/>
-                                            <circle cx="34" cy="20" r="2.5" fill="#000"/>
-                                            <rect x="24" y="32" width="12" height="16" rx="2" fill="#2C3E50"/>
-                                            <polygon points="27,32 30,35 33,32 33,34 30,37 27,34" fill="#1a1a1a"/>
-                                            <rect x="28" y="35" width="4" height="10" rx="1" fill="#8B0000"/>
-                                            <circle cx="18" cy="38" r="3" fill="#F4A460"/>
-                                            <circle cx="42" cy="38" r="3" fill="#F4A460"/>
-                                        </svg>
-                                        {/* Level badge */}
-                                        <div className="absolute -top-2 -right-2 bg-yellow-400 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">
-                                            {missionLevel}
-                                        </div>
-                                    </div>
-                                    
-                                    <div className="flex-1">
-                                        <div className="flex items-center gap-2 mb-1">
-                                            <span className="text-yellow-400 font-bold">Agent:</span>
-                                            <input 
-                                                value={childName}
-                                                onChange={(e) => setChildName(e.target.value)}
-                                                className="bg-transparent text-white font-bold text-lg border-none focus:outline-none focus:border-b-2 focus:border-yellow-400"
-                                                placeholder="Agent Codename"
-                                            />
-                                        </div>
-                                        <p className="text-yellow-300 text-sm font-semibold">{getAgentRank()}</p>
-                                        <p className="text-white text-xs opacity-75">Level {missionLevel} • {totalMissions} Missions Complete</p>
                                     </div>
                                 </div>
                             </div>
@@ -609,7 +284,6 @@
 
                     {/* Action Buttons */}
                     <div className="space-y-4">
-                        {/* Main Mission Buttons */}
                         <div className="grid grid-cols-2 gap-3">
                             <button
                                 onClick={() => addEvent('success', 'number1')}
@@ -636,35 +310,26 @@
                             </button>
                         </div>
 
-                        {/* Secondary Action Buttons */}
                         <div className="grid grid-cols-2 gap-3">
                             <button
                                 onClick={() => addEvent('try')}
-                                className="bg-yellow-500 hover:bg-yellow-600 text-white rounded-xl py-6 px-4 shadow-lg transform hover:scale-105 transition-all duration-200 active:scale-95 relative overflow-hidden"
+                                className="bg-yellow-500 hover:bg-yellow-600 text-white rounded-xl py-6 px-4 shadow-lg transform hover:scale-105 transition-all duration-200 active:scale-95"
                             >
-                                <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 to-yellow-600"></div>
-                                <div className="relative z-10">
-                                    <Zap />
-                                    <div className="font-bold text-xs tracking-wide">ATTEMPT</div>
-                                </div>
+                                <div className="font-bold text-xs tracking-wide">ATTEMPT</div>
                             </button>
                             
                             <button
                                 onClick={() => addEvent('accident')}
-                                className="bg-blue-500 hover:bg-blue-600 text-white rounded-xl py-6 px-4 shadow-lg transform hover:scale-105 transition-all duration-200 active:scale-95 relative overflow-hidden"
+                                className="bg-blue-500 hover:bg-blue-600 text-white rounded-xl py-6 px-4 shadow-lg transform hover:scale-105 transition-all duration-200 active:scale-95"
                             >
-                                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600"></div>
-                                <div className="relative z-10">
-                                    <Shield />
-                                    <div className="font-bold text-xs tracking-wide">RETRY</div>
-                                </div>
+                                <div className="font-bold text-xs tracking-wide">RETRY</div>
                             </button>
                         </div>
                     </div>
 
                     {/* Today's Intel */}
-                    <div className="bg-white rounded-2xl p-6 shadow-xl border-l-4 border-blue-600">
-                        <h2 className="text-xl font-black text-blue-800 mb-4 flex items-center gap-2">
+                    <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl p-6 shadow-xl border-l-4 border-blue-600`}>
+                        <h2 className={`text-xl font-black mb-4 flex items-center gap-2 ${darkMode ? 'text-white' : 'text-blue-800'}`}>
                             <TrendingUp />
                             TODAY'S MISSION INTEL
                         </h2>
@@ -694,9 +359,7 @@
                                     ? `🏆 Outstanding work, ${childName}! Mission success rate: EXCELLENT!`
                                     : getAccidentCount() > getSuccessCount()
                                     ? `🎯 Keep training, ${childName}! Every agent improves with practice!`
-                                    : getSuccessCount() === 0
-                                    ? `📋 Mission briefing: Ready for your first operation, ${childName}!`
-                                    : `📈 Great progress, ${childName}! Continue with current mission protocols!`}
+                                    : `📋 Mission briefing: Ready for operations, ${childName}!`}
                             </p>
                         </div>
                     </div>
@@ -722,127 +385,33 @@
                 </div>
             );
 
-            const renderAnalytics = () => {
-                const analytics = getWeeklyAnalytics();
-                
-                return (
-                    <div className="space-y-6">
-                        <div className="bg-gradient-to-r from-blue-700 to-blue-800 text-yellow-400 p-6 rounded-2xl shadow-xl">
-                            <h2 className="text-2xl font-black tracking-wider mb-2" style={{fontFamily: 'Impact, Arial Black, sans-serif', textShadow: '2px 2px 0px #1e40af'}}>
-                                MISSION ANALYTICS
-                            </h2>
-                            <p className="text-sm opacity-90">Advanced Intelligence Report</p>
-                        </div>
-
-                        {/* Key Metrics */}
-                        <div className="grid grid-cols-2 gap-4">
-                            <div className="bg-white rounded-xl p-6 shadow-lg border-l-4 border-green-500">
-                                <div className="text-center">
-                                    <div className="text-4xl font-black text-green-600 mb-2">{analytics.successRate}%</div>
-                                    <div className="text-sm font-bold text-gray-600">SUCCESS RATE</div>
-                                    <div className="text-xs text-gray-500 mt-1">Last 7 Days</div>
-                                </div>
-                            </div>
-                            
-                            <div className="bg-white rounded-xl p-6 shadow-lg border-l-4 border-blue-500">
-                                <div className="text-center">
-                                    <div className="text-4xl font-black text-blue-600 mb-2">
-                                        {analytics.bestTime > 12 ? `${analytics.bestTime - 12}PM` : `${analytics.bestTime}AM`}
-                                    </div>
-                                    <div className="text-sm font-bold text-gray-600">OPTIMAL TIME</div>
-                                    <div className="text-xs text-gray-500 mt-1">Peak Performance</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Weekly Pattern */}
-                        <div className="bg-white rounded-xl p-6 shadow-lg">
-                            <h3 className="text-lg font-black text-gray-800 mb-4">WEEKLY MISSION PATTERN</h3>
-                            <div className="grid grid-cols-7 gap-2">
-                                {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map(day => {
-                                    const dayData = analytics.dayStats[day] || { success: 0, try: 0, accident: 0 };
-                                    const total = dayData.success + dayData.try + dayData.accident;
-                                    const successPercent = total > 0 ? (dayData.success / total) * 100 : 0;
-                                    
-                                    return (
-                                        <div key={day} className="text-center">
-                                            <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-2 font-bold text-white ${
-                                                successPercent >= 70 ? 'bg-green-500' : 
-                                                successPercent >= 40 ? 'bg-yellow-500' : 
-                                                'bg-blue-500'
-                                            }`}>
-                                                {dayData.success}
-                                            </div>
-                                            <span className="text-xs font-bold text-gray-600">{day}</span>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        </div>
-
-                        {/* Intelligence Report */}
-                        <div className="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl p-6 text-white shadow-lg">
-                            <h3 className="text-lg font-black mb-3 flex items-center gap-2">
-                                <Star />
-                                INTELLIGENCE BRIEFING
-                            </h3>
-                            <p className="font-semibold">
-                                {analytics.successRate > 70 
-                                    ? `🎯 Exceptional performance! Agent ${childName} shows mastery of mission protocols. Consider advancing to independent operations.`
-                                    : analytics.successRate > 50 
-                                    ? `📈 Solid progress detected. Focus training on ${analytics.bestTime > 12 ? `${analytics.bestTime - 12}PM` : `${analytics.bestTime}AM`} timeframe for optimal results.`
-                                    : `🎖️ Agent in training phase. Recommend increased mission frequency and positive reinforcement protocols.`
-                                }
-                            </p>
-                        </div>
-
-                        {/* Pediatric Report Button */}
-                        <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-blue-200">
-                            <h3 className="text-lg font-black text-gray-800 mb-3 flex items-center gap-2">
-                                🏥 MEDICAL DOCUMENTATION
-                            </h3>
-                            <p className="text-gray-600 mb-4">Generate a professional progress report for your pediatrician with detailed analytics and developmental milestones.</p>
-                            <button
-                                onClick={printReport}
-                                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105"
-                            >
-                                📋 Generate Pediatric Report
-                            </button>
-                        </div>
-                    </div>
             const renderBadges = () => (
                 <div className="space-y-6">
                     <div className={`${darkMode ? 'bg-gradient-to-r from-purple-700 to-purple-800' : 'bg-gradient-to-r from-blue-700 to-blue-800'} text-yellow-400 p-6 rounded-2xl shadow-xl`}>
-                        <h2 className="text-2xl font-black tracking-wider mb-2" style={{fontFamily: 'Impact, Arial Black, sans-serif', textShadow: '2px 2px 0px #1e40af'}}>
+                        <h2 className="text-2xl font-black tracking-wider mb-2" style={{fontFamily: 'Impact, Arial Black, sans-serif'}}>
                             MISSION BADGES
                         </h2>
                         <p className="text-sm opacity-90">Achievement Collection</p>
                     </div>
 
-                    {/* Badge Collection */}
                     <div className="grid grid-cols-2 gap-4">
                         {[
                             { id: 'first-mission', name: 'First Mission', description: 'Completed your first mission!', icon: '🎯', requirement: totalMissions >= 1 },
                             { id: 'hat-trick', name: 'Hat Trick', description: '3 missions in one day!', icon: '🎩', requirement: getSuccessCount() >= 3 },
                             { id: 'week-warrior', name: 'Week Warrior', description: '7 day streak!', icon: '⚡', requirement: streak >= 7 },
-                            { id: 'double-agent', name: 'Double Agent', description: 'Both #1 and #2 in same day!', icon: '🕵️', requirement: getNumber1Count() > 0 && getNumber2Count() > 0 },
-                            { id: 'speed-demon', name: 'Speed Demon', description: '5 missions in one day!', icon: '💨', requirement: getSuccessCount() >= 5 },
-                            { id: 'veteran', name: 'Veteran Agent', description: '25 total missions!', icon: '🏆', requirement: totalMissions >= 25 },
-                            { id: 'elite', name: 'Elite Operative', description: '50 total missions!', icon: '👑', requirement: totalMissions >= 50 },
-                            { id: 'streak-master', name: 'Streak Master', description: '14 day streak!', icon: '🔥', requirement: streak >= 14 }
+                            { id: 'double-agent', name: 'Double Agent', description: 'Both #1 and #2 in same day!', icon: '🕵️', requirement: getNumber1Count() > 0 && getNumber2Count() > 0 }
                         ].map(badge => {
                             const isUnlocked = unlockedBadges.find(b => b.id === badge.id);
-                            const canUnlock = badge.requirement;
                             
                             return (
-                                <div key={badge.id} className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-xl p-4 shadow-lg text-center transition-all ${isUnlocked ? 'border-2 border-yellow-400' : canUnlock ? 'border-2 border-green-400' : 'border-2 border-gray-300'}`}>
-                                    <div className={`text-4xl mb-2 ${!isUnlocked && !canUnlock ? 'grayscale opacity-50' : ''}`}>
+                                <div key={badge.id} className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-xl p-4 shadow-lg text-center transition-all ${isUnlocked ? 'border-2 border-yellow-400' : 'border-2 border-gray-300'}`}>
+                                    <div className={`text-4xl mb-2 ${!isUnlocked ? 'grayscale opacity-50' : ''}`}>
                                         {badge.icon}
                                     </div>
-                                    <h3 className={`text-sm font-bold mb-1 ${darkMode ? 'text-white' : 'text-gray-800'} ${!isUnlocked && !canUnlock ? 'opacity-50' : ''}`}>
+                                    <h3 className={`text-sm font-bold mb-1 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
                                         {badge.name}
                                     </h3>
-                                    <p className={`text-xs ${darkMode ? 'text-gray-300' : 'text-gray-600'} ${!isUnlocked && !canUnlock ? 'opacity-50' : ''}`}>
+                                    <p className={`text-xs ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                                         {badge.description}
                                     </p>
                                     {isUnlocked && (
@@ -852,47 +421,9 @@
                                             </span>
                                         </div>
                                     )}
-                                    {!isUnlocked && canUnlock && (
-                                        <div className="mt-2">
-                                            <span className="bg-green-400 text-black text-xs font-bold px-2 py-1 rounded">
-                                                READY!
-                                            </span>
-                                        </div>
-                                    )}
                                 </div>
                             );
                         })}
-                    </div>
-
-                    {/* Badge Progress */}
-                    <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-xl p-6 shadow-lg`}>
-                        <h3 className={`text-lg font-black mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-                            PROGRESS TO NEXT BADGES
-                        </h3>
-                        <div className="space-y-3">
-                            {streak < 7 && (
-                                <div className={`${darkMode ? 'bg-gray-700' : 'bg-blue-50'} rounded-lg p-3`}>
-                                    <div className="flex justify-between items-center mb-2">
-                                        <span className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-blue-800'}`}>Week Warrior ⚡</span>
-                                        <span className={`text-xs ${darkMode ? 'text-gray-300' : 'text-blue-600'}`}>{streak}/7 days</span>
-                                    </div>
-                                    <div className={`w-full ${darkMode ? 'bg-gray-600' : 'bg-blue-200'} rounded-full h-2`}>
-                                        <div className="bg-blue-500 h-2 rounded-full transition-all" style={{width: `${(streak/7)*100}%`}}></div>
-                                    </div>
-                                </div>
-                            )}
-                            {totalMissions < 25 && (
-                                <div className={`${darkMode ? 'bg-gray-700' : 'bg-orange-50'} rounded-lg p-3`}>
-                                    <div className="flex justify-between items-center mb-2">
-                                        <span className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-orange-800'}`}>Veteran Agent 🏆</span>
-                                        <span className={`text-xs ${darkMode ? 'text-gray-300' : 'text-orange-600'}`}>{totalMissions}/25 missions</span>
-                                    </div>
-                                    <div className={`w-full ${darkMode ? 'bg-gray-600' : 'bg-orange-200'} rounded-full h-2`}>
-                                        <div className="bg-orange-500 h-2 rounded-full transition-all" style={{width: `${(totalMissions/25)*100}%`}}></div>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
                     </div>
                 </div>
             );
@@ -904,24 +435,20 @@
                         <div className="fixed inset-0 pointer-events-none flex items-center justify-center z-50">
                             <div className="text-center celebrate">
                                 <div className="text-8xl mb-4">🎯</div>
-                                <div className={`${darkMode ? 'bg-yellow-500 text-gray-900' : 'bg-yellow-400 text-blue-800'} px-6 py-3 rounded-xl font-black text-xl`} 
-                                     style={{fontFamily: 'Impact, Arial Black, sans-serif'}}>
+                                <div className="bg-yellow-400 text-blue-800 px-6 py-3 rounded-xl font-black text-xl">
                                     MISSION ACCOMPLISHED!
                                 </div>
                             </div>
                         </div>
                     )}
 
-                    {/* Badge Achievement Modal */}
+                    {/* Badge Modal */}
                     {showBadgeModal && newBadge && (
                         <div className="fixed inset-0 pointer-events-none flex items-center justify-center z-50">
-                            <div className={`${darkMode ? 'bg-gray-800 border-yellow-400' : 'bg-white border-yellow-500'} border-4 rounded-2xl p-6 text-center celebrate shadow-2xl`}>
+                            <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} border-4 border-yellow-400 rounded-2xl p-6 text-center celebrate shadow-2xl`}>
                                 <div className="text-6xl mb-4">{newBadge.icon}</div>
-                                <h3 className={`text-2xl font-black mb-2 ${darkMode ? 'text-yellow-400' : 'text-blue-800'}`}>
-                                    BADGE UNLOCKED!
-                                </h3>
+                                <h3 className="text-2xl font-black mb-2 text-yellow-600">BADGE UNLOCKED!</h3>
                                 <p className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>{newBadge.name}</p>
-                                <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{newBadge.description}</p>
                             </div>
                         </div>
                     )}
@@ -944,103 +471,4 @@
                                     onClick={() => setActiveView('analytics')}
                                     className={`py-3 px-4 rounded-xl font-bold transition-all ${
                                         activeView === 'analytics' 
-                                            ? 'bg-yellow-400 text-blue-800' 
-                                            : 'text-yellow-400 hover:bg-blue-700'
-                                    }`}
-                                >
-                                    📊 INTEL
-                                </button>
-                                <button
-                                    onClick={() => setActiveView('badges')}
-                                    className={`py-3 px-4 rounded-xl font-bold transition-all relative ${
-                                        activeView === 'badges' 
-                                            ? 'bg-yellow-400 text-blue-800' 
-                                            : 'text-yellow-400 hover:bg-blue-700'
-                                    }`}
-                                >
-                                    🏆 BADGES
-                                    {unlockedBadges.length > 0 && (
-                                        <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                                            {unlockedBadges.length}
-                                        </span>
-                                    )}
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* Settings Bar */}
-                        <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-xl p-3 mb-6 shadow-lg flex justify-between items-center`}>
-                            <div className="flex gap-3">
-                                <button
-                                    onClick={() => setDarkMode(!darkMode)}
-                                    className={`p-2 rounded-lg transition-all ${darkMode ? 'bg-yellow-400 text-gray-900' : 'bg-blue-100 text-blue-800'}`}
-                                    title={darkMode ? 'Day Ops' : 'Night Ops'}
-                                >
-                                    {darkMode ? '☀️' : '🌙'}
-                                </button>
-                                <button
-                                    onClick={() => setSoundEnabled(!soundEnabled)}
-                                    className={`p-2 rounded-lg transition-all ${soundEnabled ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-600'}`}
-                                    title={soundEnabled ? 'Sound On' : 'Sound Off'}
-                                >
-                                    {soundEnabled ? '🔊' : '🔇'}
-                                </button>
-                                <button
-                                    onClick={() => setAgentCodename(generateCodename())}
-                                    className="p-2 rounded-lg bg-purple-100 text-purple-800 transition-all hover:bg-purple-200"
-                                    title="Generate New Codename"
-                                >
-                                    🎲
-                                </button>
-                            </div>
-                            <div className="flex gap-2">
-                                <button
-                                    onClick={() => setReminder(30)}
-                                    className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
-                                    title="30 min reminder"
-                                >
-                                    ⏰ 30m
-                                </button>
-                                <button
-                                    onClick={() => setReminder(60)}
-                                    className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
-                                    title="1 hour reminder"
-                                >
-                                    ⏰ 1h
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* Content */}
-                        {activeView === 'dashboard' ? renderDashboard() : 
-                         activeView === 'analytics' ? renderAnalytics() : 
-                         renderBadges()}
-
-                        {/* Reminder Status */}
-                        {nextReminderTime && (
-                            <div className={`mt-4 ${darkMode ? 'bg-gray-800' : 'bg-blue-50'} rounded-xl p-3 text-center`}>
-                                <p className={`text-sm ${darkMode ? 'text-yellow-400' : 'text-blue-800'} font-bold`}>
-                                    ⏰ Next reminder: {nextReminderTime.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
-                                </p>
-                            </div>
-                        )}
-
-                        {/* Footer */}
-                        <div className="mt-8 text-center">
-                            <div className={`${darkMode ? 'bg-gray-800' : 'bg-blue-800'} text-yellow-400 py-3 px-6 rounded-xl`}>
-                                <p className="font-black text-sm" style={{fontFamily: 'Impact, Arial Black, sans-serif'}}>
-                                    MISSION: POTTY POSSIBLE
-                                </p>
-                                <p className="text-xs opacity-75">Premium Operations Center</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            );
-        };
-
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<MissionPottyPremium />);
-    </script>
-</body>
-</html>
+                                            ? 'bg-yellow-400 text-blue-800'
