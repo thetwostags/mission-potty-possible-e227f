@@ -2,7 +2,7 @@
 
 Transform potty training stress into spy mission fun! The most advanced potty training app with cutting-edge 2025 design.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/YOUR_USERNAME/mission-potty-possible)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/thetwostags/mission-potty-possible)
 
 ## ✨ Features
 - 🕵️ Modern spy-themed interface with glass morphism design
