@@ -1,1 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Potty Possible - Turn Potty Training Into an Adventure!</title>
+    <meta name="description" content="Transform potty training stress into spy mission fun! Track progress, get insights, and make every bathroom visit an exciting adventure for your little agent.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID'); // Replace with your actual GA4 ID
+    </script>
+    
+    <!-- Facebook Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID'); // Replace with your Facebook Pixel ID
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+    /></noscript>
 
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .spy-shadow {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(147, 51, 234, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(147, 51, 234, 0.8); }
+        }
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Hero Section -->
+    <div class="bg-blue-600 min-h-screen text-white relative overflow-hidden">
+        <!-- Background spy elements -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-10 text-6xl">🎯</div>
+            <div class="absolute top-40 right-20 text-4xl">🕵️</div>
+            <div class="absolute bottom-40 left-20 text-5xl">🏆</div>
+            <div class="absolute bottom-20 right-10 text-3xl">⭐</div>
+        </div>
+        
+        <div class="container mx-auto px-6 py-12 relative z-10">
+            <!-- Header -->
+            <header class="text-center mb-16">
+                <div class="floating mb-8">
+                    <!-- Logo-style title -->
+                    <h1 class="text-6xl md:text-8xl font-black text-yellow-400 mb-4" style="font-family: Impact, 'Arial Black', sans-serif; text-shadow: 3px 3px 0px #1e40af, 6px 6px 0px rgba(0,0,0,0.3);">
+                        MISSION:
+                    </h1>
+                    <h1 class="text-4xl md:text-6xl font-black text-yellow-400 mb-4" style="font-family: Impact, 'Arial Black', sans-serif; text-shadow: 3px 3px 0px #1e40af, 6px 6px 0px rgba(0,0,0,0.3);">
+                        POTTY POSSIBLE
+                    </h1>
+                </div>
+                
+                <p class="text-xl md:text-2xl opacity-90 mb-8">
+                    Turn Potty Training Into a Top-Secret Adventure!
+                </p>
+                <p class="text-lg opacity-80 max-w-2xl mx-auto">
+                    Transform bathroom battles into exciting spy missions. Your little agents will love sneaking to the potty while you track their progress with military precision.
+                </p>
+            </header>
+
+            <!-- CTA Buttons -->
+            <div class="text-center mb-16">
+                <div class="space-y-4 md:space-y-0 md:space-x-6 md:flex md:justify-center">
+                    <a href="https://www.paypal.com/ncp/payment/44DTC3QBP4WN4" 
+                       class="inline-block bg-green-500 hover:bg-green-600 text-white text-xl font-bold py-4 px-8 rounded-2xl transform hover:scale-105 transition-all duration-300 pulse-glow spy-shadow">
+                        🚀 Start Mission - $3.99
+                    </a>
+                    <a href="/app" 
+                       class="inline-block bg-white bg-opacity-20 hover:bg-opacity-30 text-white text-xl font-bold py-4 px-8 rounded-2xl transform hover:scale-105 transition-all duration-300 spy-shadow">
+                        🎯 See Mission Demo
+                    </a>
+                </div>
+                <p class="text-sm opacity-75 mt-4">
+                    ⚡ Instant access • 💝 30-day money-back guarantee • 👨‍👩‍👧‍👦 Trusted by 1000+ families
+                </p>
+            </div>
+
+            <!-- Social Proof -->
+            <div class="bg-white bg-opacity-10 rounded-2xl p-6 mb-8 backdrop-blur-sm">
+                <div class="text-center">
+                    <p class="text-lg font-semibold mb-4">Join the Mission Success Stories:</p>
+                    <div class="grid md:grid-cols-3 gap-4 text-sm">
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                            <p class="font-semibold">"Emma went from accidents to agent in 2 weeks!"</p>
+                            <p class="opacity-80">- Sarah, mom of 3</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                            <p class="font-semibold">"My son actually ASKS to go potty now!"</p>
+                            <p class="opacity-80">- Mike, dad of twins</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                            <p class="font-semibold">"The spy theme made it fun instead of stressful"</p>
+                            <p class="opacity-80">- Jessica, working mom</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem Section -->
+    <div class="bg-red-50 py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold text-red-800 mb-8">
+                    Is Potty Training Turning Into a Battle Zone? 😰
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8 text-lg text-red-700">
+                    <div class="space-y-4">
+                        <p>❌ Endless accidents and meltdowns</p>
+                        <p>❌ Your child refusing to even try</p>
+                        <p>❌ Feeling like you're failing as a parent</p>
+                        <p>❌ Stress affecting the whole family</p>
+                    </div>
+                    <div class="space-y-4">
+                        <p>❌ No idea if you're making progress</p>
+                        <p>❌ Conflicting advice from everyone</p>
+                        <p>❌ Running out of patience and ideas</p>
+                        <p>❌ Dreading every bathroom trip</p>
+                    </div>
+                </div>
+                <div class="mt-8 bg-red-100 rounded-2xl p-6">
+                    <p class="text-xl font-semibold text-red-800">
+                        What if potty training could be the HIGHLIGHT of your toddler's day instead? 🤔
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="bg-blue-600 py-16 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-black text-yellow-400 mb-6" style="font-family: Impact, 'Arial Black', sans-serif; text-shadow: 2px 2px 0px #1e40af;">
+                READY TO MAKE POTTY TRAINING AN ADVENTURE? 🎯
+            </h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Join thousands of families who've transformed potty training from stressful to spectacular with Mission Potty Possible!
+            </p>
+            
+            <a href="https://www.paypal.com/ncp/payment/44DTC3QBP4WN4" 
+               class="inline-block bg-green-500 hover:bg-green-600 text-white text-2xl font-bold py-4 px-8 rounded-2xl transform hover:scale-105 transition-all duration-300 pulse-glow spy-shadow mb-6">
+                🚀 Start Your Mission Now - $3.99
+            </a>
+            
+            <div class="text-sm opacity-90">
+                <p>⚡ Instant access after payment</p>
+                <p>💝 30-day money-back guarantee</p>
+                <p>🏆 1000+ successful potty training missions completed</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Mission Potty Possible. All rights reserved.</p>
+            <p class="text-sm opacity-75 mt-2">Making potty training possible, one mission at a time! 🎯</p>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced tracking for PayPal clicks
+        document.querySelectorAll('a[href*="paypal"]').forEach(link => {
+            link.addEventListener('click', function() {
+                console.log('PayPal purchase clicked');
+                
+                // Google Analytics tracking
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'purchase_click', {
+                        event_category: 'conversion',
+                        event_label: 'paypal_click',
+                        value: 3.99
+                    });
+                }
+                
+                // Facebook Pixel tracking
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'InitiateCheckout', {
+                        value: 3.99,
+                        currency: 'USD',
+                        content_name: 'Mission Potty Possible App'
+                    });
+                }
+            });
+        });
+        
+        // Track demo clicks
+        document.querySelectorAll('a[href="/app"]').forEach(link => {
+            link.addEventListener('click', function() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'view_demo', {
+                        event_category: 'engagement',
+                        event_label: 'demo_click'
+                    });
+                }
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'ViewContent', {content_name: 'App Demo'});
+                }
+            });
+        });
+    </script>
+</body>
+</html>
