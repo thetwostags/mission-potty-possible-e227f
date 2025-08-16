@@ -66,6 +66,94 @@
             <div class="absolute bottom-40 left-20 text-5xl">🏆</div>
             <div class="absolute bottom-20 right-10 text-3xl">⭐</div>
         </div>
+
+    <!-- Mission Preview Section -->
+    <div class="bg-green-50 py-16" id="demo">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center text-green-800 mb-12">
+                    Introducing: Your Secret Weapon for Potty Training Success 🕵️‍♀️
+                </h2>
+                
+                <!-- App Preview -->
+                <div class="bg-white rounded-3xl p-8 spy-shadow mb-12">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                                Transform Your Toddler Into a Potty Training Agent!
+                            </h3>
+                            <div class="space-y-3 text-gray-700">
+                                <p>🎯 <strong>Mission #1 & #2!</strong> - Track both types of bathroom missions</p>
+                                <p>🚀 <strong>Mission Attempt!</strong> - Turn tries into brave spy operations</p>
+                                <p>🔄 <strong>Mission Retry!</strong> - Make accidents part of agent training</p>
+                                <p>📊 <strong>Mission Intelligence!</strong> - Track patterns like a real spy agency</p>
+                                <p>🏆 <strong>Agent Levels!</strong> - Your child advances through spy ranks</p>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <!-- Phone mockup -->
+                            <div class="inline-block bg-gray-800 rounded-3xl p-4 spy-shadow">
+                                <div class="bg-white rounded-2xl w-64 h-96 p-4 overflow-hidden">
+                                    <div class="bg-gradient-to-r from-blue-700 to-blue-800 text-yellow-400 text-center py-2 rounded-lg mb-4">
+                                        <p class="font-black text-xs" style="font-family: Impact, Arial;">MISSION CONTROL</p>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2 mb-4">
+                                        <div class="bg-green-500 text-white text-xs font-bold py-4 rounded-lg text-center">
+                                            <div class="text-lg mb-1">💧</div>
+                                            <div>MISSION #1</div>
+                                        </div>
+                                        <div class="bg-orange-500 text-white text-xs font-bold py-4 rounded-lg text-center">
+                                            <div class="text-lg mb-1">💩</div>
+                                            <div>MISSION #2</div>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-4 gap-1 mb-3">
+                                        <div class="bg-green-50 rounded p-2 text-center">
+                                            <div class="text-green-600 font-bold text-sm">3</div>
+                                            <div class="text-xs text-gray-600">#1</div>
+                                        </div>
+                                        <div class="bg-orange-50 rounded p-2 text-center">
+                                            <div class="text-orange-600 font-bold text-sm">1</div>
+                                            <div class="text-xs text-gray-600">#2</div>
+                                        </div>
+                                        <div class="bg-yellow-50 rounded p-2 text-center">
+                                            <div class="text-yellow-600 font-bold text-sm">2</div>
+                                            <div class="text-xs text-gray-600">TRY</div>
+                                        </div>
+                                        <div class="bg-blue-50 rounded p-2 text-center">
+                                            <div class="text-blue-600 font-bold text-sm">0</div>
+                                            <div class="text-xs text-gray-600">RETRY</div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-50 rounded-lg p-2 text-center">
+                                        <p class="text-xs text-blue-800 font-medium">🏆 Outstanding work, Agent! 🎖️</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Grid -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-2xl p-6 text-center spy-shadow">
+                        <div class="text-4xl mb-4">🎮</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Gamified Experience</h3>
+                        <p class="text-gray-600">Spy missions, agent levels, and victory celebrations make every potty trip exciting!</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 text-center spy-shadow">
+                        <div class="text-4xl mb-4">📈</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Smart Analytics</h3>
+                        <p class="text-gray-600">Track patterns, success rates, and optimal times to accelerate progress.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 text-center spy-shadow">
+                        <div class="text-4xl mb-4">👨‍👩‍👧‍👦</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Family Friendly</h3>
+                        <p class="text-gray-600">Reduce stress for parents while keeping kids engaged and motivated.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <div class="container mx-auto px-6 py-12 relative z-10">
             <!-- Header -->
@@ -95,10 +183,10 @@
                        class="inline-block bg-green-500 hover:bg-green-600 text-white text-xl font-bold py-4 px-8 rounded-2xl transform hover:scale-105 transition-all duration-300 pulse-glow spy-shadow">
                         🚀 Start Mission - $3.99
                     </a>
-                    <a href="/app" 
-                       class="inline-block bg-white bg-opacity-20 hover:bg-opacity-30 text-white text-xl font-bold py-4 px-8 rounded-2xl transform hover:scale-105 transition-all duration-300 spy-shadow">
-                        🎯 See Mission Demo
-                    </a>
+                    <button onclick="scrollToDemo()" 
+                            class="inline-block bg-white bg-opacity-20 hover:bg-opacity-30 text-white text-xl font-bold py-4 px-8 rounded-2xl transform hover:scale-105 transition-all duration-300 spy-shadow">
+                        🎯 See Mission Preview
+                    </button>
                 </div>
                 <p class="text-sm opacity-75 mt-4">
                     ⚡ Instant access • 💝 30-day money-back guarantee • 👨‍👩‍👧‍👦 Trusted by 1000+ families
@@ -190,6 +278,21 @@
     </footer>
 
     <script>
+        function scrollToDemo() {
+            document.getElementById('demo').scrollIntoView({ behavior: 'smooth' });
+            
+            // Track demo view
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'view_demo', {
+                    event_category: 'engagement',
+                    event_label: 'demo_scroll'
+                });
+            }
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'ViewContent', {content_name: 'App Preview'});
+            }
+        }
+        
         // Enhanced tracking for PayPal clicks
         document.querySelectorAll('a[href*="paypal"]').forEach(link => {
             link.addEventListener('click', function() {
@@ -211,21 +314,6 @@
                         currency: 'USD',
                         content_name: 'Mission Potty Possible App'
                     });
-                }
-            });
-        });
-        
-        // Track demo clicks
-        document.querySelectorAll('a[href="/app"]').forEach(link => {
-            link.addEventListener('click', function() {
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'view_demo', {
-                        event_category: 'engagement',
-                        event_label: 'demo_click'
-                    });
-                }
-                if (typeof fbq !== 'undefined') {
-                    fbq('track', 'ViewContent', {content_name: 'App Demo'});
                 }
             });
         });
