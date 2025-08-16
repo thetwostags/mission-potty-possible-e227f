@@ -2,7 +2,7 @@
 
 Transform potty training stress into spy mission fun! Track progress, get insights, and make every bathroom visit an exciting adventure for your little agent.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/YOUR_USERNAME/mission-potty-possible)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/thetwostags/mission-potty-possible)
 
 ## Features
 - 🕵️ Spy-themed potty training tracker with #1 and #2 missions
