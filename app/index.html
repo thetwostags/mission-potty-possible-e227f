@@ -3,232 +3,472 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mission Potty Possible - Turn Potty Training Into an Adventure!</title>
-    <meta name="description" content="Transform potty training stress into spy mission fun! Track progress, get insights, and make every bathroom visit an exciting adventure for your little agent.">
+    <title>Mission Potty Possible - Premium App</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID'); // Replace with your actual GA4 ID
-    </script>
-    
-    <!-- Facebook Pixel -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'YOUR_PIXEL_ID'); // Replace with your Facebook Pixel ID
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
-    /></noscript>
-
     <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        @keyframes bounce-celebration {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.1); }
         }
-        .spy-shadow {
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        .floating {
-            animation: float 3s ease-in-out infinite;
-        }
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(147, 51, 234, 0.5); }
-            50% { box-shadow: 0 0 30px rgba(147, 51, 234, 0.8); }
-        }
-        .pulse-glow {
-            animation: pulse-glow 2s ease-in-out infinite;
-        }
+        .celebrate { animation: bounce-celebration 1s ease-in-out; }
     </style>
 </head>
-<body class="font-sans">
-    <!-- Hero Section -->
-    <div class="bg-blue-600 min-h-screen text-white relative overflow-hidden">
-        <!-- Background spy elements -->
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-20 left-10 text-6xl">🎯</div>
-            <div class="absolute top-40 right-20 text-4xl">🕵️</div>
-            <div class="absolute bottom-40 left-20 text-5xl">🏆</div>
-            <div class="absolute bottom-20 right-10 text-3xl">⭐</div>
-        </div>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
         
-        <div class="container mx-auto px-6 py-12 relative z-10">
-            <!-- Header -->
-            <header class="text-center mb-16">
-                <div class="floating mb-8">
-                    <!-- Logo-style title -->
-                    <h1 class="text-6xl md:text-8xl font-black text-yellow-400 mb-4" style="font-family: Impact, 'Arial Black', sans-serif; text-shadow: 3px 3px 0px #1e40af, 6px 6px 0px rgba(0,0,0,0.3);">
-                        MISSION:
-                    </h1>
-                    <h1 class="text-4xl md:text-6xl font-black text-yellow-400 mb-4" style="font-family: Impact, 'Arial Black', sans-serif; text-shadow: 3px 3px 0px #1e40af, 6px 6px 0px rgba(0,0,0,0.3);">
-                        POTTY POSSIBLE
-                    </h1>
-                </div>
+        // Simple Lucide React icons
+        const Trophy = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55.47.98.97 1.21C12.04 18.75 14 20 16 20s3.96-1.25 5.03-1.79c.5-.23.97-.66.97-1.21v-2.34"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>;
+        const Star = () => <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon></svg>;
+        const TrendingUp = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="22,7 13.5,15.5 8.5,10.5 2,17"></polyline><polyline points="16,7 22,7 22,13"></polyline></svg>;
+        const Crown = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M11.562 3.266a.5.5 0 0 1 .876 0L14.5 8l4.91-1.477a.5.5 0 0 1 .623.627L18.5 12l1.533 4.85a.5.5 0 0 1-.623.627L14.5 16l-2.062 4.734a.5.5 0 0 1-.876 0L9.5 16l-4.91 1.477a.5.5 0 0 1-.623-.627L5.5 12l-1.533-4.85a.5.5 0 0 1 .623-.627L9.5 8l2.062-4.734Z"></path></svg>;
+        const Award = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>;
+
+        const MissionPottyPremium = () => {
+            const [todayEvents, setTodayEvents] = useState([]);
+            const [streak, setStreak] = useState(0);
+            const [showCelebration, setShowCelebration] = useState(false);
+            const [childName, setChildName] = useState('Agent Alpha');
+            const [missionLevel, setMissionLevel] = useState(1);
+            const [totalMissions, setTotalMissions] = useState(0);
+            const [activeView, setActiveView] = useState('dashboard');
+            const [darkMode, setDarkMode] = useState(false);
+            const [agentCodename, setAgentCodename] = useState('');
+            const [unlockedBadges, setUnlockedBadges] = useState([]);
+            const [showBadgeModal, setShowBadgeModal] = useState(false);
+            const [newBadge, setNewBadge] = useState(null);
+            const [soundEnabled, setSoundEnabled] = useState(true);
+            const [nextReminderTime, setNextReminderTime] = useState(null);
+
+            // Load data from localStorage
+            useEffect(() => {
+                const savedEvents = localStorage.getItem('pottyEvents');
+                const savedStreak = localStorage.getItem('streak');
+                const savedName = localStorage.getItem('childName');
+                const savedLevel = localStorage.getItem('missionLevel');
+                const savedTotal = localStorage.getItem('totalMissions');
+                const savedDarkMode = localStorage.getItem('darkMode');
+                const savedCodename = localStorage.getItem('agentCodename');
+                const savedBadges = localStorage.getItem('unlockedBadges');
+                const savedSound = localStorage.getItem('soundEnabled');
                 
-                <p class="text-xl md:text-2xl opacity-90 mb-8">
-                    Turn Potty Training Into a Top-Secret Adventure!
-                </p>
-                <p class="text-lg opacity-80 max-w-2xl mx-auto">
-                    Transform bathroom battles into exciting spy missions. Your little agents will love sneaking to the potty while you track their progress with military precision.
-                </p>
-            </header>
+                if (savedEvents) {
+                    const events = JSON.parse(savedEvents);
+                    const today = new Date().toDateString();
+                    const todayOnly = events.filter(event => 
+                        new Date(event.timestamp).toDateString() === today
+                    );
+                    setTodayEvents(todayOnly);
+                }
+                
+                if (savedStreak) setStreak(parseInt(savedStreak));
+                if (savedName) setChildName(savedName);
+                if (savedLevel) setMissionLevel(parseInt(savedLevel));
+                if (savedTotal) setTotalMissions(parseInt(savedTotal));
+                if (savedDarkMode) setDarkMode(JSON.parse(savedDarkMode));
+                if (savedCodename) setAgentCodename(savedCodename);
+                if (savedBadges) setUnlockedBadges(JSON.parse(savedBadges));
+                if (savedSound) setSoundEnabled(JSON.parse(savedSound));
+                
+                // Generate codename if none exists
+                if (!savedCodename) {
+                    setAgentCodename(generateCodename());
+                }
+            }, []);
 
-            <!-- CTA Buttons -->
-            <div class="text-center mb-16">
-                <div class="space-y-4 md:space-y-0 md:space-x-6 md:flex md:justify-center">
-                    <a href="https://www.paypal.com/ncp/payment/44DTC3QBP4WN4" 
-                       class="inline-block bg-green-500 hover:bg-green-600 text-white text-xl font-bold py-4 px-8 rounded-2xl transform hover:scale-105 transition-all duration-300 pulse-glow spy-shadow">
-                        🚀 Start Mission - $3.99
-                    </a>
-                    <a href="/app" 
-                       class="inline-block bg-white bg-opacity-20 hover:bg-opacity-30 text-white text-xl font-bold py-4 px-8 rounded-2xl transform hover:scale-105 transition-all duration-300 spy-shadow">
-                        🎯 See Mission Demo
-                    </a>
-                </div>
-                <p class="text-sm opacity-75 mt-4">
-                    ⚡ Instant access • 💝 30-day money-back guarantee • 👨‍👩‍👧‍👦 Trusted by 1000+ families
-                </p>
-            </div>
+            // Save to localStorage
+            useEffect(() => {
+                const allEvents = JSON.parse(localStorage.getItem('pottyEvents') || '[]');
+                const otherDays = allEvents.filter(event => 
+                    new Date(event.timestamp).toDateString() !== new Date().toDateString()
+                );
+                const updatedEvents = [...otherDays, ...todayEvents];
+                localStorage.setItem('pottyEvents', JSON.stringify(updatedEvents));
+                localStorage.setItem('streak', streak.toString());
+                localStorage.setItem('childName', childName);
+                localStorage.setItem('missionLevel', missionLevel.toString());
+                localStorage.setItem('totalMissions', totalMissions.toString());
+                localStorage.setItem('darkMode', JSON.stringify(darkMode));
+                localStorage.setItem('agentCodename', agentCodename);
+                localStorage.setItem('unlockedBadges', JSON.stringify(unlockedBadges));
+                localStorage.setItem('soundEnabled', JSON.stringify(soundEnabled));
+            }, [todayEvents, streak, childName, missionLevel, totalMissions, darkMode, agentCodename, unlockedBadges, soundEnabled]);
 
-            <!-- Social Proof -->
-            <div class="bg-white bg-opacity-10 rounded-2xl p-6 mb-8 backdrop-blur-sm">
-                <div class="text-center">
-                    <p class="text-lg font-semibold mb-4">Join the Mission Success Stories:</p>
-                    <div class="grid md:grid-cols-3 gap-4 text-sm">
-                        <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                            <p class="font-semibold">"Emma went from accidents to agent in 2 weeks!"</p>
-                            <p class="opacity-80">- Sarah, mom of 3</p>
+            const generateCodename = () => {
+                const adjectives = ['Shadow', 'Thunder', 'Phoenix', 'Steel', 'Lightning', 'Stealth', 'Viper', 'Falcon', 'Storm', 'Blaze'];
+                const nouns = ['Strike', 'Force', 'Hunter', 'Warrior', 'Guardian', 'Ranger', 'Knight', 'Master', 'Agent', 'Elite'];
+                const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
+                const noun = nouns[Math.floor(Math.random() * nouns.length)];
+                return `${adj} ${noun}`;
+            };
+
+            const playSound = (type) => {
+                if (!soundEnabled) return;
+                try {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    if (type === 'success') {
+                        oscillator.frequency.setValueAtTime(523, audioContext.currentTime);
+                        oscillator.frequency.setValueAtTime(659, audioContext.currentTime + 0.1);
+                        oscillator.frequency.setValueAtTime(784, audioContext.currentTime + 0.2);
+                        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+                        oscillator.start(audioContext.currentTime);
+                        oscillator.stop(audioContext.currentTime + 0.5);
+                    }
+                } catch (error) {
+                    console.log('Audio not supported');
+                }
+            };
+
+            const checkBadges = (newTotalMissions, newStreak) => {
+                const badges = [
+                    { id: 'first-mission', name: 'First Mission', description: 'Completed your first mission!', icon: '🎯', requirement: newTotalMissions >= 1 },
+                    { id: 'hat-trick', name: 'Hat Trick', description: '3 missions in one day!', icon: '🎩', requirement: getSuccessCount() >= 3 },
+                    { id: 'week-warrior', name: 'Week Warrior', description: '7 day streak!', icon: '⚡', requirement: newStreak >= 7 },
+                    { id: 'double-agent', name: 'Double Agent', description: 'Both #1 and #2 in same day!', icon: '🕵️', requirement: getNumber1Count() > 0 && getNumber2Count() > 0 },
+                    { id: 'veteran', name: 'Veteran Agent', description: '25 total missions!', icon: '🏆', requirement: newTotalMissions >= 25 }
+                ];
+
+                badges.forEach(badge => {
+                    if (badge.requirement && !unlockedBadges.find(b => b.id === badge.id)) {
+                        setUnlockedBadges(prev => [...prev, badge]);
+                        setNewBadge(badge);
+                        setShowBadgeModal(true);
+                        setTimeout(() => setShowBadgeModal(false), 3000);
+                    }
+                });
+            };
+
+            const addEvent = (type, missionType = null) => {
+                const newEvent = {
+                    id: Date.now(),
+                    type,
+                    missionType,
+                    timestamp: new Date().toISOString(),
+                };
+                
+                setTodayEvents([...todayEvents, newEvent]);
+                
+                if (type === 'success') {
+                    const newStreak = streak + 1;
+                    const newTotal = totalMissions + 1;
+                    
+                    setStreak(newStreak);
+                    setTotalMissions(newTotal);
+                    triggerCelebration();
+                    playSound('success');
+                    
+                    if (newTotal % 10 === 0) {
+                        setMissionLevel(missionLevel + 1);
+                    }
+                    
+                    checkBadges(newTotal, newStreak);
+                    
+                } else if (type === 'accident') {
+                    setStreak(0);
+                }
+            };
+
+            const triggerCelebration = () => {
+                setShowCelebration(true);
+                setTimeout(() => setShowCelebration(false), 3000);
+            };
+
+            const getSuccessCount = () => todayEvents.filter(e => e.type === 'success').length;
+            const getNumber1Count = () => todayEvents.filter(e => e.type === 'success' && e.missionType === 'number1').length;
+            const getNumber2Count = () => todayEvents.filter(e => e.type === 'success' && e.missionType === 'number2').length;
+            const getTryCount = () => todayEvents.filter(e => e.type === 'try').length;
+            const getAccidentCount = () => todayEvents.filter(e => e.type === 'accident').length;
+
+            const getAgentRank = () => {
+                if (missionLevel >= 10) return "Elite Operative";
+                if (missionLevel >= 7) return "Senior Agent";
+                if (missionLevel >= 5) return "Field Agent";
+                if (missionLevel >= 3) return "Junior Agent";
+                return "Trainee Agent";
+            };
+
+            const setReminder = (minutes) => {
+                const reminderTime = new Date(Date.now() + minutes * 60000);
+                setNextReminderTime(reminderTime);
+                
+                setTimeout(() => {
+                    if (Notification.permission === 'granted') {
+                        new Notification('🎯 Mission Reminder', {
+                            body: `Time for Agent ${childName}'s next mission!`,
+                            icon: '🎯'
+                        });
+                    }
+                    setNextReminderTime(null);
+                }, minutes * 60000);
+            };
+
+            const renderDashboard = () => (
+                <div className="space-y-6">
+                    {/* Mission Control Header */}
+                    <div className={`${darkMode ? 'bg-gradient-to-r from-gray-800 to-gray-900' : 'bg-gradient-to-r from-blue-700 to-blue-800'} text-yellow-400 p-6 rounded-2xl shadow-xl relative overflow-hidden`}>
+                        <div className="absolute inset-0 bg-black opacity-20"></div>
+                        <div className="relative z-10">
+                            <div className="flex items-center justify-between mb-4">
+                                <div>
+                                    <h1 className="text-3xl font-black tracking-wider" style={{fontFamily: 'Impact, Arial Black, sans-serif', textShadow: '2px 2px 0px #1e40af'}}>
+                                        MISSION CONTROL
+                                    </h1>
+                                    <p className="text-sm opacity-90">Classified Operations Center</p>
+                                </div>
+                                <div className="text-right">
+                                    <Crown />
+                                    <p className="text-xs font-bold">PREMIUM</p>
+                                </div>
+                            </div>
+                            
+                            {/* Agent Profile */}
+                            <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-black bg-opacity-30'} rounded-xl p-4`}>
+                                <div className="flex items-center gap-4">
+                                    <div className="relative">
+                                        <svg width="60" height="60" viewBox="0 0 60 60" className="drop-shadow-lg">
+                                            <circle cx="30" cy="20" r="12" fill="#F4A460" stroke="#8B4513" strokeWidth="1"/>
+                                            <path d="M18 12c0-6 5-10 12-10s12 4 12 10" fill="#8B4513"/>
+                                            <rect x="22" y="17" width="16" height="6" rx="3" fill="#1a1a1a"/>
+                                            <circle cx="26" cy="20" r="2.5" fill="#000"/>
+                                            <circle cx="34" cy="20" r="2.5" fill="#000"/>
+                                            <rect x="24" y="32" width="12" height="16" rx="2" fill="#2C3E50"/>
+                                            <circle cx="18" cy="38" r="3" fill="#F4A460"/>
+                                            <circle cx="42" cy="38" r="3" fill="#F4A460"/>
+                                        </svg>
+                                        <div className="absolute -top-2 -right-2 bg-yellow-400 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">
+                                            {missionLevel}
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="flex-1">
+                                        <div className="flex items-center gap-2 mb-1">
+                                            <span className="text-yellow-400 font-bold">Agent:</span>
+                                            <input 
+                                                value={childName}
+                                                onChange={(e) => setChildName(e.target.value)}
+                                                className={`${darkMode ? 'bg-transparent text-white' : 'bg-transparent text-white'} font-bold text-lg border-none focus:outline-none focus:border-b-2 focus:border-yellow-400`}
+                                                placeholder="Agent Name"
+                                            />
+                                        </div>
+                                        <p className="text-yellow-300 text-sm font-semibold">{getAgentRank()}</p>
+                                        <p className="text-white text-xs opacity-75">
+                                            Level {missionLevel} • {totalMissions} Missions • {agentCodename}
+                                        </p>
+                                        {unlockedBadges.length > 0 && (
+                                            <div className="flex gap-1 mt-2">
+                                                {unlockedBadges.slice(-3).map(badge => (
+                                                    <span key={badge.id} className="text-lg" title={badge.name}>
+                                                        {badge.icon}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                            <p class="font-semibold">"My son actually ASKS to go potty now!"</p>
-                            <p class="opacity-80">- Mike, dad of twins</p>
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="space-y-4">
+                        <div className="grid grid-cols-2 gap-3">
+                            <button
+                                onClick={() => addEvent('success', 'number1')}
+                                className="bg-green-500 hover:bg-green-600 text-white rounded-2xl py-8 px-4 shadow-xl transform hover:scale-105 transition-all duration-200 active:scale-95 relative overflow-hidden"
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600"></div>
+                                <div className="relative z-10">
+                                    <div className="text-4xl mb-2">💧</div>
+                                    <div className="font-black text-sm tracking-wide">MISSION</div>
+                                    <div className="font-black text-sm tracking-wide">#1</div>
+                                </div>
+                            </button>
+                            
+                            <button
+                                onClick={() => addEvent('success', 'number2')}
+                                className="bg-orange-500 hover:bg-orange-600 text-white rounded-2xl py-8 px-4 shadow-xl transform hover:scale-105 transition-all duration-200 active:scale-95 relative overflow-hidden"
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-600"></div>
+                                <div className="relative z-10">
+                                    <div className="text-4xl mb-2">💩</div>
+                                    <div className="font-black text-sm tracking-wide">MISSION</div>
+                                    <div className="font-black text-sm tracking-wide">#2</div>
+                                </div>
+                            </button>
                         </div>
-                        <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                            <p class="font-semibold">"The spy theme made it fun instead of stressful"</p>
-                            <p class="opacity-80">- Jessica, working mom</p>
+
+                        <div className="grid grid-cols-2 gap-3">
+                            <button
+                                onClick={() => addEvent('try')}
+                                className="bg-yellow-500 hover:bg-yellow-600 text-white rounded-xl py-6 px-4 shadow-lg transform hover:scale-105 transition-all duration-200 active:scale-95"
+                            >
+                                <div className="font-bold text-xs tracking-wide">ATTEMPT</div>
+                            </button>
+                            
+                            <button
+                                onClick={() => addEvent('accident')}
+                                className="bg-blue-500 hover:bg-blue-600 text-white rounded-xl py-6 px-4 shadow-lg transform hover:scale-105 transition-all duration-200 active:scale-95"
+                            >
+                                <div className="font-bold text-xs tracking-wide">RETRY</div>
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Today's Intel */}
+                    <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl p-6 shadow-xl border-l-4 border-blue-600`}>
+                        <h2 className={`text-xl font-black mb-4 flex items-center gap-2 ${darkMode ? 'text-white' : 'text-blue-800'}`}>
+                            <TrendingUp />
+                            TODAY'S MISSION INTEL
+                        </h2>
+                        
+                        <div className="grid grid-cols-4 gap-4 mb-4">
+                            <div className="text-center bg-green-50 rounded-lg p-3">
+                                <div className="text-2xl font-black text-green-600">{getNumber1Count()}</div>
+                                <div className="text-xs font-bold text-gray-600">MISSION #1</div>
+                            </div>
+                            <div className="text-center bg-orange-50 rounded-lg p-3">
+                                <div className="text-2xl font-black text-orange-600">{getNumber2Count()}</div>
+                                <div className="text-xs font-bold text-gray-600">MISSION #2</div>
+                            </div>
+                            <div className="text-center bg-yellow-50 rounded-lg p-3">
+                                <div className="text-2xl font-black text-yellow-600">{getTryCount()}</div>
+                                <div className="text-xs font-bold text-gray-600">ATTEMPTS</div>
+                            </div>
+                            <div className="text-center bg-blue-50 rounded-lg p-3">
+                                <div className="text-2xl font-black text-blue-600">{getAccidentCount()}</div>
+                                <div className="text-xs font-bold text-gray-600">RETRIES</div>
+                            </div>
+                        </div>
+                        
+                        <div className="bg-blue-50 rounded-lg p-4 text-center border-2 border-blue-200">
+                            <p className="text-blue-800 font-bold">
+                                {getSuccessCount() >= 2 
+                                    ? `🏆 Outstanding work, ${childName}! Mission success rate: EXCELLENT!`
+                                    : getAccidentCount() > getSuccessCount()
+                                    ? `🎯 Keep training, ${childName}! Every agent improves with practice!`
+                                    : `📋 Mission briefing: Ready for operations, ${childName}!`}
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Mission Stats */}
+                    <div className="grid grid-cols-2 gap-3">
+                        <div className="bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl p-4 text-white shadow-lg">
+                            <div className="flex items-center gap-2 mb-2">
+                                <Trophy />
+                                <span className="text-sm font-bold">MISSION STREAK</span>
+                            </div>
+                            <div className="text-3xl font-black">{streak}</div>
+                        </div>
+                        
+                        <div className="bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl p-4 text-white shadow-lg">
+                            <div className="flex items-center gap-2 mb-2">
+                                <Award />
+                                <span className="text-sm font-bold">AGENT LEVEL</span>
+                            </div>
+                            <div className="text-3xl font-black">{missionLevel}</div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            );
 
-    <!-- Problem Section -->
-    <div class="bg-red-50 py-16">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl font-bold text-red-800 mb-8">
-                    Is Potty Training Turning Into a Battle Zone? 😰
-                </h2>
-                <div class="grid md:grid-cols-2 gap-8 text-lg text-red-700">
-                    <div class="space-y-4">
-                        <p>❌ Endless accidents and meltdowns</p>
-                        <p>❌ Your child refusing to even try</p>
-                        <p>❌ Feeling like you're failing as a parent</p>
-                        <p>❌ Stress affecting the whole family</p>
+            const renderBadges = () => (
+                <div className="space-y-6">
+                    <div className={`${darkMode ? 'bg-gradient-to-r from-purple-700 to-purple-800' : 'bg-gradient-to-r from-blue-700 to-blue-800'} text-yellow-400 p-6 rounded-2xl shadow-xl`}>
+                        <h2 className="text-2xl font-black tracking-wider mb-2" style={{fontFamily: 'Impact, Arial Black, sans-serif'}}>
+                            MISSION BADGES
+                        </h2>
+                        <p className="text-sm opacity-90">Achievement Collection</p>
                     </div>
-                    <div class="space-y-4">
-                        <p>❌ No idea if you're making progress</p>
-                        <p>❌ Conflicting advice from everyone</p>
-                        <p>❌ Running out of patience and ideas</p>
-                        <p>❌ Dreading every bathroom trip</p>
+
+                    <div className="grid grid-cols-2 gap-4">
+                        {[
+                            { id: 'first-mission', name: 'First Mission', description: 'Completed your first mission!', icon: '🎯', requirement: totalMissions >= 1 },
+                            { id: 'hat-trick', name: 'Hat Trick', description: '3 missions in one day!', icon: '🎩', requirement: getSuccessCount() >= 3 },
+                            { id: 'week-warrior', name: 'Week Warrior', description: '7 day streak!', icon: '⚡', requirement: streak >= 7 },
+                            { id: 'double-agent', name: 'Double Agent', description: 'Both #1 and #2 in same day!', icon: '🕵️', requirement: getNumber1Count() > 0 && getNumber2Count() > 0 }
+                        ].map(badge => {
+                            const isUnlocked = unlockedBadges.find(b => b.id === badge.id);
+                            
+                            return (
+                                <div key={badge.id} className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-xl p-4 shadow-lg text-center transition-all ${isUnlocked ? 'border-2 border-yellow-400' : 'border-2 border-gray-300'}`}>
+                                    <div className={`text-4xl mb-2 ${!isUnlocked ? 'grayscale opacity-50' : ''}`}>
+                                        {badge.icon}
+                                    </div>
+                                    <h3 className={`text-sm font-bold mb-1 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+                                        {badge.name}
+                                    </h3>
+                                    <p className={`text-xs ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                                        {badge.description}
+                                    </p>
+                                    {isUnlocked && (
+                                        <div className="mt-2">
+                                            <span className="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded">
+                                                UNLOCKED
+                                            </span>
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
-                <div class="mt-8 bg-red-100 rounded-2xl p-6">
-                    <p class="text-xl font-semibold text-red-800">
-                        What if potty training could be the HIGHLIGHT of your toddler's day instead? 🤔
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+            );
 
-    <!-- Final CTA -->
-    <div class="bg-blue-600 py-16 text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-black text-yellow-400 mb-6" style="font-family: Impact, 'Arial Black', sans-serif; text-shadow: 2px 2px 0px #1e40af;">
-                READY TO MAKE POTTY TRAINING AN ADVENTURE? 🎯
-            </h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">
-                Join thousands of families who've transformed potty training from stressful to spectacular with Mission Potty Possible!
-            </p>
-            
-            <a href="https://www.paypal.com/ncp/payment/44DTC3QBP4WN4" 
-               class="inline-block bg-green-500 hover:bg-green-600 text-white text-2xl font-bold py-4 px-8 rounded-2xl transform hover:scale-105 transition-all duration-300 pulse-glow spy-shadow mb-6">
-                🚀 Start Your Mission Now - $3.99
-            </a>
-            
-            <div class="text-sm opacity-90">
-                <p>⚡ Instant access after payment</p>
-                <p>💝 30-day money-back guarantee</p>
-                <p>🏆 1000+ successful potty training missions completed</p>
-            </div>
-        </div>
-    </div>
+            return (
+                <div className={`min-h-screen transition-all duration-300 ${darkMode ? 'bg-gradient-to-b from-gray-900 to-blue-900' : 'bg-gradient-to-b from-gray-100 to-blue-50'}`}>
+                    {/* Celebration Animation */}
+                    {showCelebration && (
+                        <div className="fixed inset-0 pointer-events-none flex items-center justify-center z-50">
+                            <div className="text-center celebrate">
+                                <div className="text-8xl mb-4">🎯</div>
+                                <div className="bg-yellow-400 text-blue-800 px-6 py-3 rounded-xl font-black text-xl">
+                                    MISSION ACCOMPLISHED!
+                                </div>
+                            </div>
+                        </div>
+                    )}
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 Mission Potty Possible. All rights reserved.</p>
-            <p class="text-sm opacity-75 mt-2">Making potty training possible, one mission at a time! 🎯</p>
-        </div>
-    </footer>
+                    {/* Badge Modal */}
+                    {showBadgeModal && newBadge && (
+                        <div className="fixed inset-0 pointer-events-none flex items-center justify-center z-50">
+                            <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} border-4 border-yellow-400 rounded-2xl p-6 text-center celebrate shadow-2xl`}>
+                                <div className="text-6xl mb-4">{newBadge.icon}</div>
+                                <h3 className="text-2xl font-black mb-2 text-yellow-600">BADGE UNLOCKED!</h3>
+                                <p className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>{newBadge.name}</p>
+                            </div>
+                        </div>
+                    )}
 
-    <script>
-        // Enhanced tracking for PayPal clicks
-        document.querySelectorAll('a[href*="paypal"]').forEach(link => {
-            link.addEventListener('click', function() {
-                console.log('PayPal purchase clicked');
-                
-                // Google Analytics tracking
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'purchase_click', {
-                        event_category: 'conversion',
-                        event_label: 'paypal_click',
-                        value: 3.99
-                    });
-                }
-                
-                // Facebook Pixel tracking
-                if (typeof fbq !== 'undefined') {
-                    fbq('track', 'InitiateCheckout', {
-                        value: 3.99,
-                        currency: 'USD',
-                        content_name: 'Mission Potty Possible App'
-                    });
-                }
-            });
-        });
-        
-        // Track demo clicks
-        document.querySelectorAll('a[href="/app"]').forEach(link => {
-            link.addEventListener('click', function() {
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'view_demo', {
-                        event_category: 'engagement',
-                        event_label: 'demo_click'
-                    });
-                }
-                if (typeof fbq !== 'undefined') {
-                    fbq('track', 'ViewContent', {content_name: 'App Demo'});
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                    <div className="max-w-md mx-auto p-4">
+                        {/* Navigation */}
+                        <div className={`${darkMode ? 'bg-gray-800' : 'bg-blue-800'} rounded-2xl p-2 mb-6 shadow-xl`}>
+                            <div className="grid grid-cols-3 gap-2">
+                                <button
+                                    onClick={() => setActiveView('dashboard')}
+                                    className={`py-3 px-4 rounded-xl font-bold transition-all ${
+                                        activeView === 'dashboard' 
+                                            ? 'bg-yellow-400 text-blue-800' 
+                                            : 'text-yellow-400 hover:bg-blue-700'
+                                    }`}
+                                >
+                                    🎯 COMMAND
+                                </button>
+                                <button
+                                    onClick={() => setActiveView('analytics')}
+                                    className={`py-3 px-4 rounded-xl font-bold transition-all ${
+                                        activeView === 'analytics' 
+                                            ? 'bg-yellow-400 text-blue-800'
